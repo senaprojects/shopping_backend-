@@ -16,9 +16,9 @@ const CONNECTION_URL = process.env.MONGO_URL;
 app.use(express.json({limit:'10mb'}));
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
-app.use("/", (req, res) => {
-  res.send("hello mongodb ....");
-});
+// app.use("/", (req, res) => {
+//   res.send("hello mongodb ....");
+// });
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = dirname(__filename);
 // app.use("/images", express.static(path.join(__dirname, "public/images")));
