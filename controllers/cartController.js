@@ -48,3 +48,15 @@ export const cartDelete =
       .then(() => res.status(200).json({ message: "cart deleted success" }))
       .catch((err) => res.status(404).json(err));
   });
+export const checkoutDelete=(req,res)=>{
+  const {userId}=req.params;
+  try {
+    // Delete all cart items associated with the user
+    Cart.deleteMany({ userId: userId });
+
+    res.status(204).json({message:"success"}); // Respond with a 204 No Content status if successful
+  } catch (error) {
+    console.error("Error clearing the cart:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
