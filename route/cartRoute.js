@@ -6,5 +6,5 @@ router.post('/create',createCart);
 router.get('/:userid',getUsercart);
 router.put('/:id',updateCart);
 router.delete('/:userid/:productid',cartDelete);
-router.delete('/:userid',checkoutDelete)
+router.delete('/check/:userid',checkoutDelete)
 export default router;

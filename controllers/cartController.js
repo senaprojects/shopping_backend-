@@ -52,7 +52,7 @@ export const checkoutDelete=(req,res)=>{
   const {userId}=req.params;
   try {
     // Delete all cart items associated with the user
-    Cart.deleteMany({ userId: userId });
+    Cart.deleteMany({ userId: userId});
 
     res.status(204).json({message:"success"}); // Respond with a 204 No Content status if successful
   } catch (error) {
